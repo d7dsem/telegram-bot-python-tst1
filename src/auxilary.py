@@ -37,8 +37,8 @@ def get_tlg_translator_token():
 def init_virt_terminal():
     if platform.system() == 'Windows':
         import ctypes
-    kernel32 = ctypes.windll.kernel32
-    kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 
 
