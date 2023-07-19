@@ -3,6 +3,10 @@ import os
 import ctypes
 from googletrans import Translator
 import platform
+import inspect
+
+
+
 
 def get_translator():
     return Translator()
@@ -21,6 +25,7 @@ def COLOR_BG(r,g,b):
     return f"\033[48;2;{r};{g};{b}m"
 
 RESET="\u001b[0m"
+COLOR_NOTIFY=COLOR_FG(100,250,100)
 COLOR_INT = COLOR_FG(28, 252, 3)
 COLOR_FLOAT=COLOR_FG(44, 187, 212)
 COLOR_ERROR="\033[31;1m"
@@ -40,6 +45,8 @@ def init_virt_terminal():
         kernel32 = ctypes.windll.kernel32
         kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
+def print_start_bot(name):
+    print(f"{COLOR_NOTIFY}Run bot {UNDERLINED}{name}{RESET}")
 
-
-
+def get_current_function_name():
+    return inspect.stack()[1][3]
