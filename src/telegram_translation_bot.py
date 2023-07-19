@@ -1,14 +1,10 @@
 import webbrowser
 import auxilary as aux
-import ctypes
+
 import telebot
 from telebot import types
 
-
-
-
-kernel32 = ctypes.windll.kernel32
-kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+aux.init_virt_terminal()
 
 token_tlg = aux.aux.get_token('TLG_TRANSLATE_BOT_TOKEN')
 

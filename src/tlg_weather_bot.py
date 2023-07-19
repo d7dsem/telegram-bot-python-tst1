@@ -1,14 +1,12 @@
 import auxilary as aux
-import ctypes
 import telebot
 from telebot import types
 import requests
 import webbrowser
 
 
+aux.init_virt_terminal()
 
-kernel32 = ctypes.windll.kernel32
-kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 waether_api_token = aux.get_token('OPENWEATHER_API_KEY')
 

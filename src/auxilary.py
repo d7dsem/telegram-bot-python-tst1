@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 import ctypes
 from googletrans import Translator
-
+import platform
 
 def get_translator():
     return Translator()
@@ -33,6 +33,12 @@ def get_token(name):
 
 def get_tlg_translator_token():
     return get_token('TLG_TRANSLATE_BOT_TOKEN')
+
+def init_virt_terminal():
+    if platform.system() == 'Windows':
+        import ctypes
+    kernel32 = ctypes.windll.kernel32
+    kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 
 
