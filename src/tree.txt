@@ -1,0 +1,15 @@
+ Том в устройстве C имеет метку SYSTEM
+ Серийный номер тома: 7CB0-6379
+
+ Содержимое папки c:\Users\d7\source\python\TELEGRAM_bots\src
+
+19.07.2023  10:28    <DIR>          .
+19.07.2023  10:28    <DIR>          ..
+18.07.2023  15:12               846 auxilary.py
+18.07.2023  16:53             1 350 telegram_translation_bot.py
+18.07.2023  15:11             3 983 telegram_translation_bot_draft.py
+12.07.2023  14:50             1 577 tlg_weather_bot.py
+19.07.2023  10:28                 0 tree.txt
+18.07.2023  15:13    <DIR>          __pycache__
+               5 файлов          7 756 байт
+               3 папок  88 902 090 752 байт свободно
