@@ -10,7 +10,7 @@ from telebot import types
 kernel32 = ctypes.windll.kernel32
 kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
-token_tlg = aux.get_tlg_translator_token()
+token_tlg = aux.aux.get_token('TLG_TRANSLATE_BOT_TOKEN')
 
 bot = telebot.TeleBot(token_tlg)
 

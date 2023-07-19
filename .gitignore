@@ -1,3 +1,4 @@
 .vscode/
+.v_env/
 .env
 TELEGRAM_bots.code-workspace
