@@ -1,0 +1,148 @@
+2023-07-21 18:01:41,819 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:02:03,676 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:05:45,972 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:09:51,397 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:12:52,606 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:12:55,363 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:15:17,298 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:15:17,465 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+2023-07-21 18:15:17,468 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1074, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 147, in raise_exceptions
+    raise self.exception_info
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 90, in run
+    task(*args, **kwargs)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 6770, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d7\source\python\TELEGRAM_bots\src\tlg_weather_bot_mk2.py", line 36, in send_welcome
+    bot.send_message(message.chat.id, "Hello there!\nSelect the name of the city.\nYou may type another city.\nMay the forse be with you.", reply_markup=markup)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1549, in send_message
+    apihelper.send_message(
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 264, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: can't parse inline keyboard button: Text buttons are unallowed in the inline keyboard
+
+2023-07-21 18:16:37,497 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:17:59,034 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:19:22,314 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:21:47,855 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:22:41,184 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:23:27,485 - root - INFO - User: 655053600, Message: Харьков
+2023-07-21 18:25:58,004 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:38:27,606 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:41:00,182 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:41:02,382 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+2023-07-21 18:41:02,384 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1074, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 147, in raise_exceptions
+    raise self.exception_info
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 90, in run
+    task(*args, **kwargs)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 6770, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d7\source\python\TELEGRAM_bots\src\tlg_weather_bot_mk2.py", line 66, in callback_query
+    bot.send_message(call.message.chat.id, weather_info, markup)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1549, in send_message
+    apihelper.send_message(
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 264, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+
+2023-07-21 18:42:17,326 - root - INFO - User: 655053600, Message: /start
+2023-07-21 18:42:29,728 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+2023-07-21 18:42:29,730 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1074, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 147, in raise_exceptions
+    raise self.exception_info
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 90, in run
+    task(*args, **kwargs)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 6770, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d7\source\python\TELEGRAM_bots\src\tlg_weather_bot_mk2.py", line 69, in callback_query
+    bot.send_message(call.message.chat.id, weather_info, markup)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1549, in send_message
+    apihelper.send_message(
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 264, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+
+2023-07-21 18:47:15,794 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+2023-07-21 18:47:15,796 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1074, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 147, in raise_exceptions
+    raise self.exception_info
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 90, in run
+    task(*args, **kwargs)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 6770, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d7\source\python\TELEGRAM_bots\src\tlg_weather_bot_mk2.py", line 69, in callback_query
+    bot.send_message(call.message.chat.id, weather_info, markup)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1549, in send_message
+    apihelper.send_message(
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 264, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+
+2023-07-21 18:54:08,911 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+2023-07-21 18:54:08,913 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1074, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 147, in raise_exceptions
+    raise self.exception_info
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\util.py", line 90, in run
+    task(*args, **kwargs)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 6770, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d7\source\python\TELEGRAM_bots\src\tlg_weather_bot_mk2.py", line 69, in callback_query
+    bot.send_message(call.message.chat.id, weather_info, markup, reply_markup=markup)
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\__init__.py", line 1549, in send_message
+    apihelper.send_message(
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 264, in send_message
+    return _make_request(token, method_url, params=payload, method='post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\d7\source\python\TELEGRAM_bots\.v_env\Lib\site-packages\telebot\apihelper.py", line 189, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
+
+2023-07-21 18:58:22,095 - root - INFO - User: 655053600, Message: /start

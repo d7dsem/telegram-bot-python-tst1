@@ -33,8 +33,7 @@ def get_weather(city):
         return f"Timeout error: {timeout_err} in {aux.get_current_function_name()}"
     except requests.exceptions.RequestException as req_err:
         return f"An unexpected error occurred during the request: {req_err} in {aux.get_current_function_name()}"
-    
-    
+      
 
 bot = telebot.TeleBot(aux.get_token('TLG_WEATHER_BOT_TOKEN'))
 
