@@ -146,3 +146,4 @@ Traceback (most recent call last):
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: unsupported parse_mode
 
 2023-07-21 18:58:22,095 - root - INFO - User: 655053600, Message: /start
+2023-07-21 19:14:31,945 - root - INFO - User: 655053600, Message: /start
