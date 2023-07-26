@@ -102,10 +102,6 @@ lang_codes = {
     'Ukranian': 'uk'
 }
 
-
-
-
-
 def add_to_pending(chat_id, message):
     global pending_translations
     if chat_id in pending_translations:
@@ -277,7 +273,7 @@ def handle_text(message):
         return
 
     if chat_id in user_language:
-        translated_text = translate(message.text, text)
+        translated_text = translate(text, user_language[chat_id])
         send_message(chat_id, translated_text)
     else:
         add_to_pending(chat_id, text)
