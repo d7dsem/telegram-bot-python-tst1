@@ -32,6 +32,7 @@ COLOR_ERROR="\033[31;1m"
 BOLD="\033[1m"
 UNDERLINED="\033[4m"
 
+
 def get_token(name):
     load_dotenv()
     return os.getenv(name)

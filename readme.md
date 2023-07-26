@@ -27,3 +27,11 @@ file **src/openweather_interaction.py** - contain stuff for interaction with OPE
 file **src/tlg_weather_bot_mk2.py** - better version of bot)))
 
 
+## Translator bot
+
+telegram_translatot_mk2.py
+
+Use service libretranslatepy
+
+
+
