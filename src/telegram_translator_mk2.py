@@ -63,6 +63,8 @@ help_msg="""- Use /set_lang command to set your native language.
 """
 
 pending_translations = {}
+
+awaiting_language_change = {}
 # Dict for users lang
 user_language = dict()
 # mapping full language names to their abbreviations
@@ -99,6 +101,9 @@ lang_codes = {
     'Turkish': 'tr',
     'Ukranian': 'uk'
 }
+
+
+
 
 
 def add_to_pending(chat_id, message):
@@ -169,6 +174,23 @@ def translate(text, target, source="auto"):
         return f"Unexpected error: {str(e)}"
 
 
+def set_user_lang(chat_id, lang):
+    if lang in lang_list_full:
+        user_language[chat_id] = lang
+        send_message(chat_id, f'Current language - {lang}')
+        awaiting_language_change[chat_id] = False
+    else:
+        awaiting_language_change[chat_id] = True
+        send_message(chat_id, 'Language not recognized. Please choose a language from the list below:')
+        send_message(chat_id, ', '.join(lang_list_full))
+        
+def send_message(chat_id, text, *args, **kwargs):
+    # Проверка языка пользователя перед отправкой сообщения
+    if chat_id in user_language and user_language[chat_id] == "Russian":
+        bot.send_message(chat_id, random.choice(abaddon_quotes), *args, **kwargs)
+
+    bot.send_message(chat_id, text, *args, **kwargs)
+    
 # Определение функций для команд /start, /clear и /set_lang.
 @bot.message_handler(commands=['start'])
 def start_command(message):
@@ -183,17 +205,8 @@ def start_command(message):
 def clear_command(message):
     send_message(message.chat.id, "The chat clearing feature is not implemented yet.",reply_markup=types.ReplyKeyboardRemove())
 
-button_prefixes = {
-    "set_lang" : "set_lang_",
-    "all_lang" : 'lang_all_',
-}
 
-def send_message(chat_id, text, *args, **kwargs):
-    # Проверка языка пользователя перед отправкой сообщения
-    if chat_id in user_language and user_language[chat_id] == "Russian":
-        bot.send_message(chat_id, random.choice(abaddon_quotes), *args, **kwargs)
 
-    bot.send_message(chat_id, text, *args, **kwargs)
 
 @bot.message_handler(commands=['dbg'])
 def debug_info_command(message):
@@ -211,6 +224,11 @@ def debug_info_command(message):
     debug_info = f"Language: {lang}\nPending translations: {queue_length}"
     send_message(user_id, debug_info)
 
+button_prefixes = {
+    "set_lang" : "set_lang_",
+    "all_lang" : 'lang_all_',
+}
+
 @bot.message_handler(commands=['set_lang'])
 def set_lang_command(message):
     markup = generate_inline_buttons_markup(lang_list_brief, 3, button_prefixes["set_lang"])
@@ -223,22 +241,23 @@ def set_lang_command(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
-    user_id = call.message.chat.id
+    chat_id = call.message.chat.id
     if call.data.startswith('set_lang_'):
         # If the button data starts with 'lang_', set the user's native language
         new_lang = call.data[len(button_prefixes["set_lang"]):]
         user_language[call.message.chat.id] = new_lang
         send_message(call.message.chat.id, f'Native language - {new_lang}')
         global pending_translations
-        if user_id in pending_translations:
-            for text in pending_translations[user_id]:
-                translated_text = translate(text, user_language[user_id])
-                send_message(user_id, translated_text)
-            clear_pending(user_id)
+        if chat_id in pending_translations:
+            for text in pending_translations[chat_id]:
+                translated_text = translate(text, user_language[chat_id])
+                send_message(chat_id, translated_text)
+            clear_pending(chat_id)
             
     elif call.data == 'lang_all_':
         # If the 'List of all' button is pressed, send the full list of languages
-         send_message(call.message.chat.id, ', '.join(lang_list_full))
+        send_message(chat_id, ', '.join(lang_list_full))
+        awaiting_language_change[chat_id] = True
 
 
 # def add_kb_buttons_for_set_lang_command(message):
@@ -251,12 +270,17 @@ def callback_query(call):
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     chat_id = message.chat.id
+    text = message.text
+
+    if awaiting_language_change.get(chat_id):            
+        set_user_lang(chat_id, text)
+        return
+
     if chat_id in user_language:
-        lang = user_language[chat_id]
-        translated_text = translate(message.text, lang)
+        translated_text = translate(message.text, text)
         send_message(chat_id, translated_text)
     else:
-        add_to_pending(chat_id, message.text)
+        add_to_pending(chat_id, text)
         set_lang_command(message)
 
 if __name__ == "__main__":
